@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonebook - Your Contacts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="phonebook-container">
+            <header class="header">
+                <img src="images/logo.webp" alt="Phonebook Logo" width="50" height="50">
+                <h1>Phonebook</h1>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </header>
+            <div class="contact-list">
+                <h3>Your Contacts</h3>
+                <ul id="listOfContacts" class="list-group"></ul>
+            </div>
+            <button class="btn-primary" data-toggle="modal" data-target="#addNew">Add New Contact</button>
+        </div>
+    </div>
+
+    <!-- Modal for adding contact -->
+    <div id="addNew" class="modal">
+        <div class="modal-content">
+            <h2>Add New Contact</h2>
+            <form id="addContactForm">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" required>
+                <label for="contactNumber">Number</label>
+                <input type="text" id="contactNumber" required>
+                <label for="contactCategory">Category</label>
+                <select id="contactCategory" required>
+                    <option value="Friend">Friend</option>
+                    <option value="Family">Family</option>
+                    <option value="Employee">Employee</option>
+                </select>
+                <label for="isFavorite">Favorite</label>
+                <input type="checkbox" id="isFavorite">
+                <label for="contactPhoto">Photo</label>
+                <input type="file" id="contactPhoto">
+                <button type="submit">Save Contact</button>
+            </form>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
